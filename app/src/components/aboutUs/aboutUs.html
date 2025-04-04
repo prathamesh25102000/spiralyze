@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aboutUs.module.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="aboutUs">
+        <div class="left">
+            <div class="section">
+                <img alt="" src="/app/public/assets/images/videoTitleImg.png" class="titleImg" />
+                <div class="pointsSection">
+                    <div class="point">
+                        <img alt="" src="/app/public/assets/icons/tickmarkIcon.png" class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Needs Assessment</div>
+                            <div class="pointSubtitle">The Advocacy Evaluation Toolkit contains the instruments used to
+                                collect data for evaluating the Consumer Voices for Coverage program. </div>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <img alt="" src="/app/public/assets/icons/tickmarkIcon.png" class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Insurance Advocacy</div>
+                            <div class="pointSubtitle">We are committed to advocating for appropriate coverage and
+                                payment policies.</div>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <img alt="" src="/app/public/assets/icons/tickmarkIcon.png" class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Treatment Planning & Placement</div>
+                            <div class="pointSubtitle">Patients can better understand medical procedures, discharge
+                                instructions, etc.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img alt="" src="/app/public/assets/images/aboutUsGradientImg.png" class="gradientImg" />
+            <img alt="" src="/app/public/assets/images/aboutUsLeftBgImg.png" class="upperLeftImg" />
+        </div>
+        <div class="right">
+            <img alt="" src="/app/public/assets/images/aboutUsRightBgImg.png" class="rightImg" />
+        </div>
+        <div onclick="openPopup()">
+            <img alt="" src="/app/public/assets/images/videoPlayBtn.png" class="videoBtn" />
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <iframe class="video" id="video" width="560" height="315"
+                title="YouTube video player" frameborder="0" autoplay="true"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <button class="close-btn" onclick="closePopup()">X</button>
+        </div>
+    </div>
+    <script src="aboutUs.js"></script>
+</body>
+
+</html>

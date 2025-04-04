@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contactUs.module.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="/app/public/assets/images/logo.png" alt="logo" class="logo" />
+            <nav>
+                <ul>
+                    <li><a class="active" href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li class="pipe">|</li>
+                </ul>
+                <div class="consultSection">
+                    <div class="consultText">CALL NOW FOR A CONSULT</div>
+                    <div class="contactNumber">&nbsp;&nbsp;123.456.7890</div>
+                </div>
+            </nav>
+        </header>
+        <div class="innerContainer">
+            <div class="text-section">
+                <img src="/app/public/assets/images/interventionImg.png" alt="" class="interventionImgWeb" />
+                <img src="/app/public/assets/images/interventionImgMobile.png" alt="" class="interventionImgTab" />
+                <div class="text">Showing greater respect to older adults can be done in several ways:</div>
+                <div class="text">
+                    acknowledging and putting to use the talents and skills of older adults; creating
+                    intergenerational initiatives; and allowing older adults to stay active and independent
+                    for as long as possible.
+                </div>
+            </div>
+            <div class="contactUsForm">
+                <div class="formHeading">Contact Us</div>
+                <div class="inputGroup">
+                    <input class="input" type="text" id="first-name" placeholder="First Name" required>
+                    <input class="input" type="text" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="inputGroup">
+                    <input class="input" type="email" id="email" placeholder="Business Email" required>
+                    <input class="input" type="text" id="company" placeholder="Company" required>
+                </div>
+                <div class="inputGroup selectionGroup">
+                    <select class="input selection" id="country">
+                        <option class="selectoption disabledOption" value="" disabled selected hidden>Country</option>
+                        <option class="selectoption" value="USA">USA</option>
+                        <option class="selectoption" value="Canada">Canada</option>
+                        <option class="selectoption" value="UK">UK</option>
+                        <option class="selectoption" value="Australia">Australia</option>
+                    </select>
+                </div>
+                <button class="submitBtn" onclick="submitForm()"><img src="/app/public//assets/icons/submitIcon.png" class="submitIcon" /><span>Submit</span></button>
+            </div>
+        </div>
+        <img alt="" src="/app/public/assets/images/upper-curve.png" class="upperCurveWeb" />
+        <img alt="" src="/app/public/assets/images/lower-curve.png" class="lowerCurveWeb" />
+        <img alt="" src="/app/public/assets/images/lowerCurveMobile.png" class="lowerCurveTab" />
+        <div class="divider"></div>
+    </div>
+
+    <script src="contactUs.js"></script>
+</body>
+
+</html>

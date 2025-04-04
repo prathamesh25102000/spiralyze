@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="components/contactUs/contactUs.module.css">
+    <link rel="stylesheet" href="components/gallery/gallery.module.css">
+    <link rel="stylesheet" href="components/aboutUs/aboutUs.module.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+</head>
+
+<body>
+    <div id="contactUs"></div>
+    <div id="gallery"></div>
+    <div id="aboutUs"></div>
+
+    <script>
+        fetch('components/contactUs/contactUs.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('contactUs').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('components/gallery/gallery.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('gallery').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+        fetch('components/aboutUs/aboutUs.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('aboutUs').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+    </script>
+    <script src="components/contactUs/contactUs.js"></script>
+    <script src="components/aboutUs/aboutUs.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
