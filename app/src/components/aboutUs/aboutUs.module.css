@@ -4,16 +4,12 @@
   flex-direction: row;
   margin-top: 100px;
 }
-.left {
-  width: fit-content;
-  height: 648px;
-  position: relative;
-}
 .section {
   position: absolute;
   z-index: 10;
   top: 94px;
-  left: 128px;
+  left: 8.88%;
+  width: 32.77%;
 }
 .titleImg {
   width: 444px;
@@ -54,39 +50,44 @@
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
+  opacity: 0.8;
 }
-.gradientImg {
+.gradientImgWeb {
   position: absolute;
-  width: 755px;
+  width: 52.43%;
   height: 648px;
   z-index: 4;
   top: 0;
   left: 0;
 }
-.upperLeftImg {
+.gradientImgMobile,
+.upperLeftImgMobile {
+  display: none;
+}
+.upperLeftImgWeb {
   position: absolute;
-  width: 779px;
+  width: 54.1%;
   height: 648px;
   top: 0;
   left: 0;
   z-index: 3;
 }
-.right {
-  position: relative;
-  height: 648px;
-}
-.rightImg {
+.rightImgWeb {
   position: absolute;
   top: 0;
-  left: 691px;
-  width: 749px;
+  /* left: 691px; */
+  right: 0;
+  width: 52%;
   height: 648px;
   z-index: 2;
+}
+.rightImgMobile{
+  display: none;
 }
 .videoBtn {
   position: absolute;
   top: 220px;
-  right: 255px;
+  right: 17.7%;
   z-index: 5;
   width: 208px;
   height: 208px;
@@ -117,11 +118,16 @@
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  height: 315px;
   border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 17.77/10;
+  background-color: transparent;
 }
-.video{
+.video {
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .close-btn {
@@ -134,4 +140,67 @@
   color: white;
   border-radius: 50%;
   border: none;
+}
+
+@media (max-width: 1050px) {
+  .gradientImgWeb,
+  .upperLeftImgWeb,
+  .rightImgWeb {
+    display: none;
+  }
+  .aboutUs {
+    flex-direction: column;
+  }
+  .titleImg {
+    left: calc(50% - 222px);
+    position: absolute;
+  }
+  .section {
+    top: 102px;
+    left: 6.25%;
+    width: 90%;
+  }
+  .pointsSection{
+    position: absolute;
+    top: 64px;
+    gap: 24px;
+  }
+  .gradientImgMobile,
+  .upperLeftImgMobile {
+    display: block;
+    width: 100%;
+  }
+
+  .gradientImgMobile {
+    z-index: 5;
+    height: 648px;
+    position: absolute;
+    top: 0;
+  }
+
+  .upperLeftImgMobile {
+    z-index: 4;
+    height: 673px;
+    position: absolute;
+    top: 0;
+  }
+  .rightImgMobile{
+    display: block;
+    position: absolute;
+    top: 600px;
+    width: 100%;
+    height: 500px;
+  }
+  .videoBtn{
+    top: 532px;
+    right: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+  }
+  .close-btn {
+    height: 40px;
+    width: 40px;
+    left: calc(50% - 20px);
+    top: -60px;
+  }
 }
