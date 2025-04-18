@@ -1,0 +1,228 @@
+.featureContainer {
+  width: 100vw;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.featuresBox {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 371px);
+  gap: 36px;
+  margin-top: 36px;
+}
+.feature {
+  width: 371px;
+  height: 96px;
+}
+
+.titleImgWeb {
+  width: 625px;
+  height: 36px;
+}
+.paragraphs {
+  display: grid;
+  grid-template-columns: repeat(3, 371px);
+  column-gap: 36px;
+  margin-top: 42px;
+}
+.paraWeb {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.para1{
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  font-style: italic;
+}
+.successRateBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 4px);
+  height: 48px;
+  border-radius: 4px;
+  border: 2px solid #5bc8af;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #5bc8af;
+  gap: 8px;
+  cursor: pointer;
+}
+.successRateBtn:hover {
+  transform: translateY(-2px);
+}
+.arrowIcon {
+  width: 17px;
+  height: 13px;
+}
+.paraMobile {
+  display: none;
+}
+
+.card {
+  border: 2px solid rgba(91, 200, 175, 1);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 367px;
+  height: 92px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.card:hover {
+  color: rgba(91, 200, 175, 1);
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  height: 18px;
+}
+
+.card:hover .tooltip-wrapper {
+  visibility: visible;
+}
+
+.tooltip-icon {
+  color: rgba(91, 200, 175, 1);
+  border: 1px solid rgba(91, 200, 175, 1);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #3e7a6c;
+  color: #fff;
+  text-align: left;
+  padding: 12px;
+  border-radius: 6px;
+  width: 300px;
+  position: absolute;
+  bottom: -94px;
+  left: 35px;
+  z-index: 1;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  height: 84px;
+  box-sizing: border-box;
+}
+
+.tooltip-text::before {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #3e7a6c transparent;
+}
+
+.card:hover .tooltip-text {
+  visibility: visible;
+}
+
+
+@media (max-width: 1250px) {
+  .featuresBox{
+    grid-template-columns: repeat(3, 348px);
+  }
+  .featureContainer {
+    padding: 0 24px;
+    width: calc(100% - 48px);
+  }
+  .feature {
+    width: 348px;
+    height: auto;
+  }
+  .card{
+    width: 344px;
+  }
+  .cardTitle{
+    max-width: 208px;
+    text-align: center;
+  }
+  .featuresBox {
+    justify-content: center;
+  }
+  .paragraphs {
+    grid-template-columns: repeat(3, calc((100% - 72px) / 3));
+  }
+}
+
+@media (max-width: 1165px) {
+  .featuresBox{
+    grid-template-columns: repeat(2, 348px);
+  }
+
+  .tooltip-text{
+    left: 24px;
+  }
+}
+
+@media (max-width: 1050px) {
+
+  .feature {
+    width: calc((100% - 48px) / 3);
+    height: auto;
+  }
+  .featuresBox {
+    gap: 24px;
+  }
+  .paraWeb {
+    display: none;
+  }
+
+  .paragraphs {
+    grid-template-columns: repeat(2, calc(50% - 12px));
+    column-gap: 24px;
+    margin-top: 32px;
+  }
+  .paraMobile {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .para1{
+    margin-top: 32px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

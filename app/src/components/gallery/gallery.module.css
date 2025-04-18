@@ -94,6 +94,7 @@
   }
   .paragraphs{
     grid-template-columns: repeat(2, calc(50% - 12px));
+    column-gap: 24px;
   }
   .paraMobile{
     display: block;

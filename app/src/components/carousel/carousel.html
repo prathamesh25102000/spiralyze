@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="carousel.module.css">
+</head>
+
+<body>
+
+    <div class="carousel-container">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+
+        <div class="carousel-inner">
+            <div class="slides">
+                <div class="slide">
+                    <div class="wrapper">
+                        <img src="/app/public/assets/images/carouselImg1.png" alt="Abbie Harvey">
+                        <div class="testimonial">
+                            <img alt="" src="/app/public/assets/images/doubleQuotesImg.png" class="quotesImg" />
+                            <h3>Abbie Harvey</h3>
+                            <p class="testimonialText">I have been caring for my mom & dad off and on for about 10 years
+                                now, and I know the
+                                importance of me being there for appointments. Older people need attention, love and
+                                care
+                                that they truly deserve.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="wrapper">
+                        <img src="/app/public/assets/images/carouselImg2.png" alt="John Doe">
+                        <div class="testimonial">
+                            <img alt="" src="/app/public/assets/images/doubleQuotesImg.png" class="quotesImg" />
+                            <h3>John Doe</h3>
+                            <p class="testimonialText">Helping my grandfather through his final years made me realize
+                                how important
+                                companionship and emotional care are. Lorem Ipsum is simply dummy text of the printing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="wrapper">
+                        <img src="/app/public/assets/images/carouselImg3.png" alt="Emily Carter">
+                        <div class="testimonial">
+                            <img alt="" src="/app/public/assets/images/doubleQuotesImg.png" class="quotesImg" />
+                            <h3>Emily Carter</h3>
+                            <p class="testimonialText">Working as a caregiver has taught me patience and deep respect.
+                                Everyone deserves to be
+                                heard. Lorem Ipsum is simply dummy text of the printing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-arrows">
+            <div class="arrow-group slide1-arrows">
+                <label class="nav prev" for="slide3">&#10094;</label>
+                <label class="nav next" for="slide2">&#10095;</label>
+            </div>
+            <div class="arrow-group slide2-arrows">
+                <label class="nav prev" for="slide1">&#10094;</label>
+                <label class="nav next" for="slide3">&#10095;</label>
+            </div>
+            <div class="arrow-group slide3-arrows">
+                <label class="nav prev" for="slide2">&#10094;</label>
+                <label class="nav next" for="slide1">&#10095;</label>
+            </div>
+        </div>
+
+
+        <div class="pagination">
+            <label class="dot" for="slide1"></label>
+            <label class="dot" for="slide2"></label>
+            <label class="dot" for="slide3"></label>
+        </div>
+    </div>
+
+</body>
+
+</html>

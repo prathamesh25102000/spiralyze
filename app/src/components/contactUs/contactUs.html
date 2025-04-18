@@ -36,15 +36,31 @@
                     for as long as possible.
                 </div>
             </div>
-            <div class="contactUsForm">
+            <form class="contactUsForm" novalidate autocomplete="off">
                 <div class="formHeading">Contact Us</div>
                 <div class="inputGroup">
-                    <input class="input" type="text" id="first-name" placeholder="First Name" required>
-                    <input class="input" type="text" id="last-name" placeholder="Last Name" required>
+                    <div class="floatingInput">
+                        <input type="text" name="first_field" id="first-name" placeholder=" " autocomplete="off" required />
+                        <label for="first-name">First Name</label>
+                        <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                    </div>
+                    <div class="floatingInput">
+                        <input type="text" id="last-name" name="last-name" placeholder=" " autocomplete="off" required />
+                        <label for="last-name">Last Name</label>
+                        <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                    </div>
                 </div>
                 <div class="inputGroup">
-                    <input class="input" type="email" id="email" placeholder="Business Email" required>
-                    <input class="input" type="text" id="company" placeholder="Company" required>
+                    <div class="floatingInput">
+                        <input type="email" id="email" name="email" placeholder=" " autocomplete="off" required />
+                        <label for="last-name">Business Email</label>
+                        <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                    </div>
+                    <div class="floatingInput">
+                        <input type="text" id="company" name="company" placeholder=" " autocomplete="off" required />
+                        <label for="last-name">Company</label>
+                        <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                    </div>
                 </div>
                 <div class="inputGroup selectionGroup">
                     <select class="input selection" id="country">
@@ -55,8 +71,9 @@
                         <option class="selectoption" value="Australia">Australia</option>
                     </select>
                 </div>
-                <button class="submitBtn" onclick="submitForm()"><img src="/app/public//assets/icons/submitIcon.png" class="submitIcon" /><span>Submit</span></button>
-            </div>
+                <button class="submitBtn" type="submit" onclick="submitForm(event)"><img src="/app/public//assets/icons/submitIcon.png"
+                        class="submitIcon" /><span>Submit</span></button>
+            </form>
         </div>
         <img alt="" src="/app/public/assets/images/upper-curve.png" class="upperCurveWeb" />
         <img alt="" src="/app/public/assets/images/lower-curve.png" class="lowerCurveWeb" />
