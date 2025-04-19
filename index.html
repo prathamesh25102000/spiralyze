@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get An INTERVENTION</title>
+    <link rel="stylesheet" href="/app/src/components/contactUs/contactUs.module.css">
+    <link rel="stylesheet" href="/app/src/components/gallery/gallery.module.css">
+    <link rel="stylesheet" href="/app/src/components/carousel/carousel.module.css">
+    <link rel="stylesheet" href="/app/src/components/features/features.module.css">
+    <link rel="stylesheet" href="/app/src/components/aboutUs/aboutUs.module.css" />
+    <link rel="stylesheet" href="/app/src/components/footer/footer.module.css" />
+</head>
+
+<body>
+    <div>
+        <div id="contactUs"></div>
+        <div id="gallery"></div>
+        <div id="carousel"></div>
+        <div id="features"></div>
+        <div id="aboutUs"></div>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        fetch('/app/src/components/contactUs/contactUs.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('contactUs').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('/app/src/components/gallery/gallery.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('gallery').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('/app/src/components/carousel/carousel.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('carousel').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('/app/src/components/features/features.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('features').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('/app/src/components/aboutUs/aboutUs.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('aboutUs').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+
+        fetch('/app/src/components/footer/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading component:', error));
+    </script>
+    <script src="/app/src/components/contactUs/contactUs.js"></script>
+    <script src="/app/src/components/aboutUs/aboutUs.js"></script>
+</body>
+
+</html>

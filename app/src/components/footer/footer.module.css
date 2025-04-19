@@ -1,0 +1,28 @@
+.footer{
+    display: flex;
+    align-items: center;
+    max-width: 1184px;
+    height: 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.leftSection{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(117, 117, 117, 1);
+}
+.rightSection{
+    display: flex;
+    align-items: center;
+}
+.navItem{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(117, 117, 117, 1);
+}
