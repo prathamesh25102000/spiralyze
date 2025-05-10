@@ -5,69 +5,1929 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get An INTERVENTION</title>
-    <link rel="stylesheet" href="/app/src/components/contactUs/contactUs.module.css">
-    <link rel="stylesheet" href="/app/src/components/gallery/gallery.module.css">
-    <link rel="stylesheet" href="/app/src/components/carousel/carousel.module.css">
-    <link rel="stylesheet" href="/app/src/components/features/features.module.css">
-    <link rel="stylesheet" href="/app/src/components/aboutUs/aboutUs.module.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/app/src/components/footer/footer.module.css" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            width: calc(100% - 256px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 128px 0 128px;
+        }
+
+        .logo {
+            width: 226px;
+            height: 35px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 31px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 41px;
+            font-weight: 400;
+            letter-spacing: 0%;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            font-weight: 700;
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .active {
+            font-weight: 700;
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .pipe {
+            color: white;
+            font-size: 14px;
+            margin-right: 46px;
+            line-height: 41px;
+            opacity: 0.5;
+        }
+
+        .consultSection {
+            display: flex;
+            align-items: center;
+        }
+
+        .consultText,
+        .contactNumber {
+            font-family: "Montserrat", sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 41px;
+            letter-spacing: 0%;
+        }
+
+        .consultText {
+            color: white;
+            font-weight: 700;
+        }
+
+        .contactNumber {
+            color: #5bc8af;
+            font-weight: 400;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 650px;
+            background: url("/app/public/assets/images/contactUsBackgroundImg.png") no-repeat center center/cover;
+        }
+
+        .innerContainer {
+            display: flex;
+            gap: 109px;
+        }
+
+        .upperCurveWeb {
+            height: 89px;
+            width: 100vw;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .lowerCurveWeb {
+            height: 111px;
+            width: 100vw;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 9;
+        }
+
+        .text-section {
+            width: 601px;
+            color: white;
+            margin-top: 170px;
+        }
+
+        .interventionImgWeb {
+            width: 498px;
+            height: 128px;
+            margin-bottom: 20px;
+        }
+
+        .interventionImgTab {
+            display: none;
+        }
+
+        .text-section .text {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+            letter-spacing: 0%;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .contactUsForm {
+            margin-top: 86px;
+            padding: 51px 28px 56px 28px;
+            border-radius: 10px;
+            width: 416px;
+            height: 342px;
+            margin-top: 86px;
+            background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .formHeading {
+            color: white;
+            font-size: 28px;
+            line-height: 35px;
+            font-weight: 700;
+            letter-spacing: 0%;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            margin-bottom: 34px;
+        }
+
+        .inputGroup {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .selectionGroup {
+            width: 100%;
+        }
+
+        .input {
+            width: 166px;
+            height: 41px;
+            background: transparent;
+            color: white;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 2px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .selection {
+            width: 100%;
+            height: 48px;
+            padding-top: 0;
+        }
+
+        input::placeholder {
+            color: white;
+            opacity: 0.7;
+            font-family: "Montserrat", sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .selectoption {
+            color: white;
+            font-family: "Montserrat", sans-serif !important;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        select option:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .disabledOption {
+            opacity: 0.7;
+        }
+
+        .submitBtn {
+            border: none;
+            width: 221px;
+            height: 56px;
+            color: white;
+            background: #5bc8af;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-family: "Montserrat", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.08);
+        }
+
+        .submitBtn:hover {
+            box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.08);
+        }
+
+        .submitIcon {
+            height: 24px;
+            width: 24px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            z-index: 11;
+        }
+
+        .lowerCurveTab {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        .selectionGroup {
+            margin-bottom: 0;
+        }
+
+        /* Base styles */
+        .floatingInput {
+            position: relative;
+            flex: 1;
+        }
+
+        .floatingInput input {
+            opacity: 0.7;
+            font-family: "Montserrat", sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+            border-radius: 2px;
+            width: 200px;
+            height: 48px;
+            background: transparent;
+            color: white;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 2px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            box-sizing: border-box;
+        }
+
+        .floatingInput input:focus,
+        .floatingInput input:not(:placeholder-shown) {
+            color: white;
+            border-color: white;
+            opacity: 1;
+        }
+
+        .floatingInput input:focus+label,
+        .floatingInput .invalid+label,
+        .floatingInput input:not(:placeholder-shown)+label {
+            top: -10px;
+            padding: 0 5px;
+            background: #2c7c6a;
+            z-index: 5;
+            opacity: 1;
+        }
+
+        .floatingInput label {
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            color: white;
+            pointer-events: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+            transition: 0.2s ease all;
+            color: white;
+            top: 14px;
+            opacity: 0.7;
+        }
+
+        .floatingInput .invalid {
+            border-color: #ef7d7d;
+        }
+
+        .floatingInput .invalid+label {
+            color: #ef7d7d;
+        }
+
+        .floatingInput input:not(:placeholder-shown)+label {
+            color: white;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 54px;
+            left: 0;
+            background: #ef7d7d;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 20px;
+            font-family: "Montserrat", sans-serif;
+            width: 200px;
+            height: 64px;
+            box-sizing: border-box;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .tooltip::before {
+            content: "";
+            position: absolute;
+            top: -13px;
+            left: calc(50% - 7px);
+            border: 7px solid transparent;
+            border-bottom-color: #ef7d7d;
+        }
+
+        form:invalid .tooltip {
+            display: none;
+        }
+
+        .floatingInput .invalid~.tooltip {
+            display: block;
+        }
+
+        @media (max-width: 1250px) {
+            .container {
+                height: 1090px;
+                background-image: url("/app//public/assets/images/contactUsImgMobile.png");
+            }
+
+            .innerContainer {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .text-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0;
+            }
+
+            .interventionImgWeb {
+                display: none;
+            }
+
+            .interventionImgTab {
+                display: block;
+                width: 498px;
+                height: 128px;
+                margin-bottom: 16px;
+            }
+
+            .text {
+                text-align: center;
+                font-size: 18px;
+                line-height: 28px;
+            }
+
+            .contactUsForm {
+                margin-top: 0;
+            }
+
+            .upperCurveWeb,
+            .lowerCurveWeb {
+                display: none;
+            }
+
+            .lowerCurveTab {
+                height: 111px;
+                width: 100%;
+                display: block;
+                position: absolute;
+                bottom: -1px;
+            }
+        }
+
+        @media (max-width: 1180px) {
+            .header {
+                padding: 18px 24px 0 24px;
+                width: calc(100% - 48px);
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                gap: 29px;
+                justify-content: right;
+            }
+
+            nav ul li {
+                margin-right: 0;
+            }
+
+            .pipe {
+                display: none;
+            }
+        }
+
+        .gallery {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .flexBox {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .galleryImg {
+            width: 371px;
+            height: 180px;
+            border-radius: 8px;
+        }
+
+        .textSection {
+            margin-top: 100px;
+        }
+
+        .headerImg {
+            width: 344px;
+            height: 36px;
+        }
+
+        .paragraphs {
+            display: grid;
+            grid-template-columns: repeat(3, 371px);
+            column-gap: 36px;
+            margin-top: 42px;
+        }
+
+        .paraWeb {
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        .successRateBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 4px);
+            height: 48px;
+            border-radius: 4px;
+            border: 2px solid #5bc8af;
+            margin-top: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 700;
+            color: #5bc8af;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .successRateBtn:hover {
+            transform: translateY(-2px);
+        }
+
+        .arrowIcon {
+            width: 17px;
+            height: 13px;
+        }
+
+        .paraMobile {
+            display: none;
+        }
+
+        @media (max-width: 1250px) {
+            .gallery {
+                margin-top: 24px;
+                padding: 0 24px;
+                width: calc(100% - 48px);
+            }
+
+            .galleryImg {
+                width: calc((100% - 72px) / 3);
+                height: auto;
+            }
+
+            .flexBox {
+                justify-content: center;
+            }
+
+            .paragraphs {
+                grid-template-columns: repeat(3, calc((100% - 72px) / 3));
+            }
+        }
+
+        @media (max-width: 1050px) {
+            .galleryImg {
+                width: calc((100% - 48px) / 3);
+                height: auto;
+            }
+
+            .flexBox {
+                gap: 24px;
+            }
+
+            .paraWeb {
+                display: none;
+            }
+
+            .paragraphs {
+                grid-template-columns: repeat(2, calc(50% - 12px));
+                column-gap: 24px;
+            }
+
+            .paraMobile {
+                display: block;
+                font-family: "Montserrat", sans-serif;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 400;
+            }
+
+            .successRateBtn {
+                margin-top: 34px;
+            }
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1184px;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .carousel-inner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            max-width: 1184px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide img {
+            width: 269px;
+            height: 269px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .testimonial {
+            background: #194d44;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            color: white;
+            flex: 1;
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.12);
+            width: 675px;
+            height: 269px;
+            position: relative;
+        }
+
+        .testimonial h3 {
+            margin-top: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 24px;
+            line-height: 34px;
+            font-weight: 700;
+            margin-bottom: 0;
+            margin-top: 62px;
+            margin-left: 65px;
+        }
+
+        .wrapper .quotesImg {
+            position: absolute;
+            top: 38px;
+            right: 65px;
+            width: 60px;
+            height: 47px;
+        }
+
+        .testimonialText {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 400;
+            font-style: italic;
+            width: 545px;
+            margin-left: 65px;
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+
+        .nav {
+            position: absolute;
+            top: calc(50% - 40px);
+            transform: translateY(-50%);
+            color: rgba(234, 234, 234, 1);
+            font-size: 40px;
+            font-family: "Montserrat", sans-serif;
+            cursor: pointer;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .nav:hover {
+            color: rgba(91, 200, 175, 1);
+        }
+
+        .prev,
+        .next {
+            pointer-events: auto;
+        }
+
+        .prev {
+            left: 0px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 64px 0 0 0;
+            gap: 36px;
+        }
+
+        .dot {
+            height: 16px;
+            width: 16px;
+            background-color: rgba(234, 234, 234, 1);
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #slide1:checked~.carousel-inner .slides {
+            transform: translateX(0%);
+        }
+
+        #slide2:checked~.carousel-inner .slides {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked~.carousel-inner .slides {
+            transform: translateX(-200%);
+        }
+
+        #slide1:checked~.pagination label[for="slide1"],
+        #slide2:checked~.pagination label[for="slide2"],
+        #slide3:checked~.pagination label[for="slide3"] {
+            background-color: #5bc8af;
+        }
+
+        .arrow-group {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .arrow-group label {
+            pointer-events: auto;
+        }
+
+        #slide1:checked~.nav-arrows .slide1-arrows,
+        #slide2:checked~.nav-arrows .slide2-arrows,
+        #slide3:checked~.nav-arrows .slide3-arrows {
+            display: flex;
+        }
+
+        @media (max-width: 1235px) {
+
+            .carousel-container,
+            .slides {
+                max-width: calc(100% - 48px);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 1123px) {
+            .nav {
+                display: none;
+            }
+
+            .slides {
+                max-width: 100%;
+            }
+
+            .wrapper {
+                width: 720px;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 26px;
+            }
+
+            .slide img {
+                height: 198px;
+                width: 198px;
+            }
+
+            .testimonial {
+                width: 100%;
+                max-width: 496px;
+                height: 198px;
+            }
+
+            .testimonial h3 {
+                margin-top: 33px;
+                margin-left: 37px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+
+            .testimonialText {
+                margin-left: 37px;
+                font-size: 14px;
+                line-height: 24px;
+                width: 432px;
+                margin-top: 8px;
+            }
+
+            .wrapper .quotesImg {
+                width: 40px;
+                height: 31px;
+                top: 19px;
+                right: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+                position: relative;
+                height: 404px;
+                width: 328px;
+            }
+
+            .testimonial {
+                width: 328px;
+                height: 404px;
+                border-radius: 8px;
+            }
+
+            .testimonialText {
+                width: 263px;
+                margin-left: 29px;
+            }
+
+            .slide img {
+                position: absolute;
+                width: 180px;
+                height: 180px;
+                z-index: 2;
+                top: -60px;
+                left: 29px;
+            }
+
+            .testimonial h3 {
+                margin-top: 146px;
+                margin-left: 29px;
+            }
+
+            .wrapper .quotesImg {
+                width: 60px;
+                height: 47px;
+                top: 73px;
+                left: 240px;
+            }
+
+            .slide {
+                height: 524px;
+            }
+
+            .pagination {
+                padding: 0;
+            }
+
+            .carousel-container {
+                max-width: calc(100% - 32px);
+            }
+        }
+
+
+        .featureContainer {
+            width: 100vw;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featuresBox {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(3, 371px);
+            gap: 36px;
+            margin-top: 36px;
+        }
+
+        .feature {
+            width: 371px;
+            height: 96px;
+        }
+
+        .titleImgWeb {
+            width: 625px;
+            height: 36px;
+        }
+
+        .paragraphs {
+            display: grid;
+            grid-template-columns: repeat(3, 371px);
+            column-gap: 36px;
+            margin-top: 42px;
+        }
+
+        .paraWeb {
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        .para1 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .successRateBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 4px);
+            height: 48px;
+            border-radius: 4px;
+            border: 2px solid #5bc8af;
+            margin-top: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 700;
+            color: #5bc8af;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .successRateBtn:hover {
+            transform: translateY(-2px);
+        }
+
+        .arrowIcon {
+            width: 17px;
+            height: 13px;
+        }
+
+        .paraMobile {
+            display: none;
+        }
+
+        .card {
+            border: 2px solid rgba(91, 200, 175, 1);
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            position: relative;
+            color: rgba(51, 51, 51, 1);
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 367px;
+            height: 92px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+
+        .card:hover {
+            color: rgba(91, 200, 175, 1);
+        }
+
+        .tooltip-wrapper {
+            position: relative;
+            display: inline-block;
+            visibility: hidden;
+            height: 18px;
+        }
+
+        .card:hover .tooltip-wrapper {
+            visibility: visible;
+        }
+
+        .tooltip-icon {
+            color: rgba(91, 200, 175, 1);
+            border: 1px solid rgba(91, 200, 175, 1);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            background-color: #3e7a6c;
+            color: #fff;
+            text-align: left;
+            padding: 12px;
+            border-radius: 6px;
+            width: 300px;
+            position: absolute;
+            bottom: -94px;
+            left: 35px;
+            z-index: 1;
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 400;
+            font-family: "Montserrat", sans-serif;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+            height: 84px;
+            box-sizing: border-box;
+        }
+
+        .tooltip-text::before {
+            content: '';
+            position: absolute;
+            top: -19px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #3e7a6c transparent;
+        }
+
+        .card:hover .tooltip-text {
+            visibility: visible;
+        }
+
+
+        @media (max-width: 1250px) {
+            .featuresBox {
+                grid-template-columns: repeat(3, 348px);
+            }
+
+            .featureContainer {
+                padding: 0 24px;
+                width: calc(100% - 48px);
+            }
+
+            .feature {
+                width: 348px;
+                height: auto;
+            }
+
+            .card {
+                width: 344px;
+            }
+
+            .cardTitle {
+                max-width: 208px;
+                text-align: center;
+            }
+
+            .featuresBox {
+                justify-content: center;
+            }
+
+            .paragraphs {
+                grid-template-columns: repeat(3, calc((100% - 72px) / 3));
+            }
+        }
+
+        @media (max-width: 1165px) {
+            .featuresBox {
+                grid-template-columns: repeat(2, 348px);
+            }
+
+            .tooltip-text {
+                left: 24px;
+            }
+        }
+
+        @media (max-width: 1050px) {
+
+            .feature {
+                width: calc((100% - 48px) / 3);
+                height: auto;
+            }
+
+            .featuresBox {
+                gap: 24px;
+            }
+
+            .paraWeb {
+                display: none;
+            }
+
+            .paragraphs {
+                grid-template-columns: repeat(2, calc(50% - 12px));
+                column-gap: 24px;
+                margin-top: 32px;
+            }
+
+            .paraMobile {
+                display: block;
+                font-family: "Montserrat", sans-serif;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 400;
+            }
+
+            .para1 {
+                margin-top: 32px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+
+        .aboutUs {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            margin-top: 100px;
+        }
+
+        .section {
+            position: absolute;
+            z-index: 10;
+            top: 94px;
+            left: 8.88%;
+            width: 32.77%;
+        }
+
+        .titleImg {
+            width: 444px;
+            height: 44px;
+        }
+
+        .pointsSection {
+            margin-top: 62px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .point {
+            display: flex;
+            gap: 12px;
+        }
+
+        .tickmark {
+            width: 17px;
+            height: 13px;
+            margin-top: 8px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pointTitle {
+            color: white;
+            font-family: "Montserrat", sans-serif !important;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 700;
+        }
+
+        .pointSubtitle {
+            color: white;
+            font-family: "Montserrat", sans-serif !important;
+            font-style: normal;
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .gradientImgWeb {
+            position: absolute;
+            width: 52.43%;
+            height: 648px;
+            z-index: 4;
+            top: 0;
+            left: 0;
+        }
+
+        .gradientImgMobile,
+        .upperLeftImgMobile {
+            display: none;
+        }
+
+        .upperLeftImgWeb {
+            position: absolute;
+            width: 54.1%;
+            height: 648px;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        .rightImgWeb {
+            position: absolute;
+            top: 0;
+            /* left: 691px; */
+            right: 0;
+            width: 52%;
+            height: 648px;
+            z-index: 2;
+        }
+
+        .rightImgMobile {
+            display: none;
+        }
+
+        .videoBtn {
+            position: absolute;
+            top: 220px;
+            right: 17.7%;
+            z-index: 5;
+            width: 208px;
+            height: 208px;
+            cursor: pointer;
+        }
+
+        .videoBtn:hover {
+            transform: scale(1.14);
+        }
+
+        #popup {
+            display: none;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 12;
+        }
+
+        .popup-content {
+            position: absolute;
+            margin: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 17.77/10;
+            background-color: transparent;
+        }
+
+        .video {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -50px;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            border-radius: 50%;
+            border: none;
+        }
+
+        @media (max-width: 1050px) {
+
+            .gradientImgWeb,
+            .upperLeftImgWeb,
+            .rightImgWeb {
+                display: none;
+            }
+
+            .aboutUs {
+                flex-direction: column;
+            }
+
+            .titleImg {
+                left: calc(50% - 222px);
+                position: absolute;
+            }
+
+            .section {
+                top: 102px;
+                left: 6.25%;
+                width: 90%;
+            }
+
+            .pointsSection {
+                position: absolute;
+                top: 64px;
+                gap: 24px;
+            }
+
+            .gradientImgMobile,
+            .upperLeftImgMobile {
+                display: block;
+                width: 100%;
+            }
+
+            .gradientImgMobile {
+                z-index: 5;
+                height: 648px;
+                position: absolute;
+                top: 0;
+            }
+
+            .upperLeftImgMobile {
+                z-index: 4;
+                height: 673px;
+                position: absolute;
+                top: 0;
+            }
+
+            .rightImgMobile {
+                display: block;
+                position: absolute;
+                top: 600px;
+                width: 100%;
+                height: 500px;
+            }
+
+            .videoBtn {
+                top: 532px;
+                right: calc(50% - 100px);
+                width: 200px;
+                height: 200px;
+            }
+
+            .close-btn {
+                height: 40px;
+                width: 40px;
+                left: calc(50% - 20px);
+                top: -60px;
+            }
+        }
+
+
+        .form-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .form-popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-popup.show .form-popup-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <div>
-        <div id="contactUs"></div>
-        <div id="gallery"></div>
-        <div id="carousel"></div>
-        <div id="features"></div>
-        <div id="aboutUs"></div>
+        <div class="container">
+            <header class="header">
+                <img src="https://getintervention.netlify.app/app/public/assets/images/logo.png" alt="logo"
+                    class="logo" />
+                <nav>
+                    <ul>
+                        <li><a class="active" href="index.html">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li class="pipe">|</li>
+                    </ul>
+                    <div class="consultSection">
+                        <div class="consultText">CALL NOW FOR A CONSULT</div>
+                        <div class="contactNumber">&nbsp;&nbsp;123.456.7890</div>
+                    </div>
+                </nav>
+            </header>
+            <div class="innerContainer">
+                <div class="text-section">
+                    <img src="https://getintervention.netlify.app/app/public/assets/images/interventionImg.png" alt=""
+                        class="interventionImgWeb" />
+                    <img src="https://getintervention.netlify.app/app/public/assets/images/interventionImgMobile.png"
+                        alt="" class="interventionImgTab" />
+                    <div class="text">Showing greater respect to older adults can be done in several ways:</div>
+                    <div class="text">
+                        acknowledging and putting to use the talents and skills of older adults; creating
+                        intergenerational initiatives; and allowing older adults to stay active and independent
+                        for as long as possible.
+                    </div>
+                </div>
+                <form class="contactUsForm" novalidate autocomplete="off">
+                    <div class="formHeading">Contact Us</div>
+                    <div class="inputGroup">
+                        <div class="floatingInput">
+                            <input type="text" name="first_field" id="first-name" placeholder=" " autocomplete="off"
+                                required />
+                            <label for="first-name">First Name</label>
+                            <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                        </div>
+                        <div class="floatingInput">
+                            <input type="text" id="last-name" name="last-name" placeholder=" " autocomplete="off"
+                                required />
+                            <label for="last-name">Last Name</label>
+                            <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                        </div>
+                    </div>
+                    <div class="inputGroup">
+                        <div class="floatingInput">
+                            <input type="email" id="email" name="email" placeholder=" " autocomplete="off" required />
+                            <label for="last-name">Business Email</label>
+                            <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                        </div>
+                        <div class="floatingInput">
+                            <input type="text" id="company" name="company" placeholder=" " autocomplete="off"
+                                required />
+                            <label for="last-name">Company</label>
+                            <div class="tooltip">This field can’t be empty. Please fill it in.</div>
+                        </div>
+                    </div>
+                    <div class="inputGroup selectionGroup">
+                        <select class="input selection" id="country">
+                            <option class="selectoption disabledOption" value="" disabled selected hidden>Country
+                            </option>
+                            <option class="selectoption" value="USA">USA</option>
+                            <option class="selectoption" value="Canada">Canada</option>
+                            <option class="selectoption" value="UK">UK</option>
+                            <option class="selectoption" value="Australia">Australia</option>
+                        </select>
+                    </div>
+                    <button class="submitBtn" type="submit" onclick="submitForm(event)"><img
+                            src="https://getintervention.netlify.app/app/public//assets/icons/submitIcon.png"
+                            class="submitIcon" /><span>Submit</span></button>
+                </form>
+            </div>
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/upper-curve.png"
+                class="upperCurveWeb" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/lower-curve.png"
+                class="lowerCurveWeb" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/lowerCurveMobile.png"
+                class="lowerCurveTab" />
+            <div class="divider"></div>
+        </div>
+        <div class="gallery">
+            <div class="flexBox">
+                <img src="https://getintervention.netlify.app/app/public/assets/images/gallery-img-3.png"
+                    class="galleryImg" />
+                <img src="https://getintervention.netlify.app/app/public/assets/images/gallery-img-2.png"
+                    class="galleryImg" />
+                <img src="https://getintervention.netlify.app/app/public/assets/images/gallery-img-1.png"
+                    class="galleryImg" />
+            </div>
+            <div class="textSection">
+                <img src="https://getintervention.netlify.app/app//public//assets//images/weUnderstandImg.png"
+                    class="headerImg" />
+                <div class="paragraphs">
+                    <div class="paraWeb">
+                        Older adults want to play active and meaningful roles in their lives, including as part of a
+                        social
+                        network, a neighborhood, and a community. Service providers and policymakers must consider that
+                        a
+                        lack of sense of purpose can become problematic as people age. Engaging them in leisure
+                        activities
+                        and volunteer work is important.
+                    </div>
+                    <div class="paraWeb">
+                        Older adults want to stay active and contribute to society in a reciprocal manner (meaning that
+                        they
+                        want to exchange their services and skills with others for the mutual benefit of the
+                        neighborhood or
+                        community). Qualitative and quantitative studies published from 2005 to 2016 examining the
+                        social
+                        needs of older adults were eligible for inclusion.
+                    </div>
+                    <div class="paraWeb">
+                        To stimulate social contacts, neighborhood initiatives can be developed. Social meeting places,
+                        such
+                        as pubs and churches can help to foster the development of close and peripheral relationships.
+                        <div class="successRateBtn">92% Success Rate <img
+                                src="https://getintervention.netlify.app/app//public/assets/images/rightArrowIcon.png"
+                                alt="" class="arrowIcon" /></div>
+                    </div>
+                    <div class="paraMobile">
+                        Older adults want to play active and meaningful roles in their lives, including as part of a
+                        social
+                        network, a neighborhood, and a community. Service providers and policymakers must consider that
+                        a
+                        lack of sense of purpose can become problematic as people age. Engaging them in leisure
+                        activities
+                        and volunteer work is important.<br><br>Older adults want to stay active and contribute to
+                        society
+                        in a
+                        reciprocal manner (meaning that they want to exchange their services and skills with others for
+                        the
+                        mutual benefit of the neighborhood or community).
+                    </div>
+                    <div class="paraMobile">
+                        Qualitative and quantitative studies published from 2005 to 2016 examining the social needs of
+                        older
+                        adults were eligible for inclusion. To stimulate social contacts, neighborhood initiatives can
+                        be
+                        developed. Social meeting places, such as pubs and churches can help to foster the development
+                        of
+                        close and peripheral relationships.
+                        <div class="successRateBtn">92% Success Rate <img
+                                src="https://getintervention.netlify.app/app//public/assets/images/rightArrowIcon.png"
+                                alt="" class="arrowIcon" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+
+            <div class="carousel-inner">
+                <div class="slides">
+                    <div class="slide">
+                        <div class="wrapper">
+                            <img src="https://getintervention.netlify.app/app/public/assets/images/carouselImg1.png"
+                                alt="Abbie Harvey">
+                            <div class="testimonial">
+                                <img alt=""
+                                    src="https://getintervention.netlify.app/app/public/assets/images/doubleQuotesImg.png"
+                                    class="quotesImg" />
+                                <h3>Abbie Harvey</h3>
+                                <p class="testimonialText">I have been caring for my mom & dad off and on for about 10
+                                    years
+                                    now, and I know the
+                                    importance of me being there for appointments. Older people need attention, love and
+                                    care
+                                    that they truly deserve.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="wrapper">
+                            <img src="https://getintervention.netlify.app/app/public/assets/images/carouselImg2.png"
+                                alt="John Doe">
+                            <div class="testimonial">
+                                <img alt=""
+                                    src="https://getintervention.netlify.app/app/public/assets/images/doubleQuotesImg.png"
+                                    class="quotesImg" />
+                                <h3>John Doe</h3>
+                                <p class="testimonialText">Helping my grandfather through his final years made me
+                                    realize
+                                    how important
+                                    companionship and emotional care are. Lorem Ipsum is simply dummy text of the
+                                    printing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="wrapper">
+                            <img src="https://getintervention.netlify.app/app/public/assets/images/carouselImg3.png"
+                                alt="Emily Carter">
+                            <div class="testimonial">
+                                <img alt=""
+                                    src="https://getintervention.netlify.app/app/public/assets/images/doubleQuotesImg.png"
+                                    class="quotesImg" />
+                                <h3>Emily Carter</h3>
+                                <p class="testimonialText">Working as a caregiver has taught me patience and deep
+                                    respect.
+                                    Everyone deserves to be
+                                    heard. Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-arrows">
+                <div class="arrow-group slide1-arrows">
+                    <label class="nav prev" for="slide3">&#10094;</label>
+                    <label class="nav next" for="slide2">&#10095;</label>
+                </div>
+                <div class="arrow-group slide2-arrows">
+                    <label class="nav prev" for="slide1">&#10094;</label>
+                    <label class="nav next" for="slide3">&#10095;</label>
+                </div>
+                <div class="arrow-group slide3-arrows">
+                    <label class="nav prev" for="slide2">&#10094;</label>
+                    <label class="nav next" for="slide1">&#10095;</label>
+                </div>
+            </div>
+
+
+            <div class="pagination">
+                <label class="dot" for="slide1"></label>
+                <label class="dot" for="slide2"></label>
+                <label class="dot" for="slide3"></label>
+            </div>
+        </div>
+        <div class="featureContainer">
+            <div class="featureSection">
+                <img src="https://getintervention.netlify.app/app//public//assets//images/titleImgWeb.png"
+                    class="titleImgWeb" />
+                <div class="paraMobile para1">
+                    <b>Interventions</b> should focus on older adult’s desire for connectedness, participation and
+                    independence.
+                </div>
+                <div class="paragraphs">
+                    <div class="paraWeb para1">
+                        <b>Interventions</b> should focus on older adult’s desire for connectedness, participation and
+                        independence.
+                    </div>
+                    <div class="paraWeb">
+                        Loneliness and social isolation are growing public health concerns in our aging society. Whilst
+                        these experiences occur across the life span, 50% of individuals aged over 60 are at risk of
+                        social
+                        isolation and one-third will experience some degree of loneliness later in life. It is vital to
+                        reduce loneliness and social isolation among older adults.
+                    </div>
+                    <div class="paraWeb">
+                        The methodology framework proposed by Asked and O’Malley and further developed by Levac, et al.
+                        was
+                        used to guide the scoping review process. A total of 33 reviews met the inclusion criteria,
+                        evaluating a range of interventions targeted at older people residing in the community or
+                        institutionalised settings.
+                    </div>
+                    <div class="paraMobile">
+                        Loneliness and social isolation are growing public health concerns in our aging society. Whilst
+                        these experiences occur across the life span, 50% of individuals aged over 60 are at risk of
+                        social
+                        isolation and one-third will experience some degree of loneliness later in life. It is vital to
+                        reduce loneliness and social isolation among older adults.
+                    </div>
+                    <div class="paraMobile">
+                        The methodology framework proposed by Asked and O’Malley and further developed by Levac, et al.
+                        was
+                        used to guide the scoping review process. A total of 33 reviews met the inclusion criteria,
+                        evaluating a range of interventions targeted at older people residing in the community or
+                        institutionalised settings.
+                    </div>
+                </div>
+            </div>
+            <div class="featuresBox">
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Needs Assessment</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Treatment Planning & Placement</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Transportation & Logistics</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Insurance Advocacy</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Employment Advocacy</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="card">
+                        <span class="cardTitle">Aftercare Planning</span>
+                        <div class="tooltip-wrapper">
+                            <div class="tooltip-icon">i</div>
+                        </div>
+                        <div class="tooltip-text">
+                            We’re experienced in our individual crafts and understand how each one of our roles impacts
+                            your plan holistically.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aboutUs">
+            <div class="section">
+                <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/videoTitleImg.png"
+                    class="titleImg" />
+                <div class="pointsSection">
+                    <div class="point">
+                        <img alt="" src="https://getintervention.netlify.app/app/public/assets/icons/tickmarkIcon.png"
+                            class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Needs Assessment</div>
+                            <div class="pointSubtitle">The Advocacy Evaluation Toolkit contains the instruments used to
+                                collect data for evaluating the Consumer Voices for Coverage program. </div>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <img alt="" src="https://getintervention.netlify.app/app/public/assets/icons/tickmarkIcon.png"
+                            class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Insurance Advocacy</div>
+                            <div class="pointSubtitle">We are committed to advocating for appropriate coverage and
+                                payment policies.</div>
+                        </div>
+                    </div>
+                    <div class="point">
+                        <img alt="" src="https://getintervention.netlify.app/app/public/assets/icons/tickmarkIcon.png"
+                            class="tickmark" />
+                        <div class="details">
+                            <div class="pointTitle">Treatment Planning & Placement</div>
+                            <div class="pointSubtitle">Patients can better understand medical procedures, discharge
+                                instructions, etc.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/aboutUsGradientImg.png"
+                class="gradientImgWeb" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/gradientImgMobile.png"
+                class="gradientImgMobile" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/aboutUsLeftBgImg.png"
+                class="upperLeftImgWeb" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/aboutUsleftImgMobile.png"
+                class="upperLeftImgMobile" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/aboutUsRightBgImg.png"
+                class="rightImgWeb" />
+            <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/aboutUsImgMobile.png"
+                class="rightImgMobile" />
+            <div onclick="openPopup()">
+                <img alt="" src="https://getintervention.netlify.app/app/public/assets/images/videoPlayBtn.png"
+                    class="videoBtn" />
+            </div>
+        </div>
+        <div class="popup-overlay" id="popup">
+            <div class="popup-content">
+                <iframe class="video" id="video" title="YouTube video player" frameborder="0" autoplay="true"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <button class="close-btn" onclick="closePopup()">X</button>
+            </div>
+        </div>
+        <div id="form-popup" class="form-popup">
+            <div class="form-popup-content">
+                <span class="popup-close-btn" onclick="closeThankYouPopup()">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your submission has been received.</p>
+            </div>
+        </div>
     </div>
     <div id="footer"></div>
 
     <script>
-        fetch('/app/src/components/contactUs/contactUs.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('contactUs').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+        isFormSubmitted = false;
 
-        fetch('/app/src/components/gallery/gallery.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('gallery').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+        function submitForm(e) {
+            e.preventDefault();
+            isFormSubmitted = true;
 
-        fetch('/app/src/components/carousel/carousel.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('carousel').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const country = document.getElementById('country').value;
+            if (!firstName) {
+                document.getElementById('first-name').classList.add('invalid');
+            } else {
+                document.getElementById('first-name').classList.remove('invalid');
+            }
 
-        fetch('/app/src/components/features/features.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('features').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+            if (!lastName) {
+                document.getElementById('last-name').classList.add('invalid');
+            } else {
+                document.getElementById('last-name').classList.remove('invalid');
+            }
 
-        fetch('/app/src/components/aboutUs/aboutUs.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('aboutUs').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+            if (!email) {
+                document.getElementById('email').classList.add('invalid');
+            } else {
+                document.getElementById('email').classList.remove('invalid');
+            }
 
-        fetch('/app/src/components/footer/footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading component:', error));
+            if (!company) {
+                document.getElementById('company').classList.add('invalid');
+            } else {
+                document.getElementById('company').classList.remove('invalid');
+            }
+
+            if (!country) {
+                document.getElementById('country').classList.add('invalid');
+            } else {
+                document.getElementById('country').classList.remove('invalid');
+            }
+
+            if (!country) {
+                alert("Please fill in all fields");
+                return;
+            }
+
+            if (firstName && lastName && email && company && country) {
+                showThankYouPopup();
+            }
+        }
+
+
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+            let video = document.getElementById("video");
+            video.src =
+                "https://www.youtube.com/embed/bemUsPknumA?si=PA5AImfulWNYxO6x&autoplay=1&mute=1";
+            video.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            let video = document.getElementById("video");
+            video.display = "none";
+            video.src = "";
+        }
+
+        function showThankYouPopup() {
+            console.log(">>popup>>");
+            
+            const popup = document.getElementById("form-popup");
+            popup.style.display = "flex";
+            setTimeout(() => {
+                popup.classList.add("show");
+            }, 10);
+        }
+
+        function closeThankYouPopup() {
+            const popup = document.getElementById("form-popup");
+            popup.classList.remove("show");
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 300);
+        }
     </script>
-    <script src="/app/src/components/contactUs/contactUs.js"></script>
-    <script src="/app/src/components/aboutUs/aboutUs.js"></script>
 </body>
 
 </html>
